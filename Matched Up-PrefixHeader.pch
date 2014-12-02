@@ -1,0 +1,21 @@
+//
+//  Matched Up-PrefixHeader.pch
+//  Matched Up
+//
+//  Created by macbook on 29/11/14.
+//  Copyright (c) 2014 Eray Diler. All rights reserved.
+//
+
+#ifndef Matched_Up_Matched_Up_PrefixHeader_pch
+#define Matched_Up_Matched_Up_PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "Constants.h"
+
+#import <Parse/Parse.h>
+#import <FacebookSDK/FacebookSDK.h>
+#import <ParseFacebookUtils/PFFacebookUtils.h>
+
+#endif
