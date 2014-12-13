@@ -17,6 +17,7 @@
     testUser.password = @"password1";
     
     [testUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        NSLog(@"sign up %@", error);
         if (!error) {
             NSDictionary *profile = @{@"age": @28, @"birthday": @"23/04/1983", @"firstName": @"Julie", @"gender": @"female", @"location": @"Istanbul, Turkey", @"name": @"Julie Adams"};
             [testUser setObject:profile forKey:kUserProfileKey];
@@ -33,9 +34,9 @@
                             NSLog(@"Photo saved successfully");
                         } else NSLog(@"asd %@", error);
                     }];
-                } else NSLog(@"%@", error);
+                } //else NSLog(@"%@", error);
             }];
-        } else NSLog(@"%@", error);
+        } //else NSLog(@"%@", error);
     }];
 }
 

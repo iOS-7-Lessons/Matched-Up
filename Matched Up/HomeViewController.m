@@ -7,6 +7,7 @@
 //
 
 #import "HomeViewController.h"
+#import "ProfileViewController.h"
 #import "TestUser.h"
 
 @interface HomeViewController ()
@@ -75,6 +76,7 @@
     [self checkLike];
 }
 - (IBAction)infoButtonPressed:(UIButton *)sender {
+    [self performSegueWithIdentifier:@"toProfileViewControllerSegue" sender:nil];
 }
 - (IBAction)dislikeButtonPressed:(UIButton *)sender {
     [self checkDislike];
@@ -83,7 +85,7 @@
 #pragma mark - Helper Methods
 
 - (void)queryForCurrentPhotoIndex {
-    NSLog(@"Photos Data %@", self.photos); // TEST
+    //NSLog(@"Photos Data %@", self.photos); // TEST
     self.photo = self.photos[self.currentPhotoIndex];
     PFFile *file = self.photo[kPhotoPictureKey];
     [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
@@ -126,6 +128,7 @@
             }
             self.likeButton.enabled = YES;
             self.dislikeButton.enabled = YES;
+            self.infoButton.enabled = YES;
         }
     }];
 }
@@ -133,7 +136,7 @@
 - (void)updateView {
     self.firstNameLabel.text = self.photo[kPhotoUserKey][kUserProfileKey][kUserProfileNameKey];
     self.ageLabel.text = [NSString stringWithFormat:@"%@", self.photo[kPhotoUserKey][kUserProfileKey][kUserProfileAgeKey]];
-    self.tagLineLabel.text = self.photo[kPhotoUserKey][kCCUserTagLineKey];
+    self.tagLineLabel.text = self.photo[kPhotoUserKey][kUserTagLineKey];
 }
 
 - (void)setupNextPhoto {
@@ -210,14 +213,18 @@
     else [self saveDislike];
 }
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"toProfileViewControllerSegue"]) {
+        if ([segue.destinationViewController isKindOfClass:[ProfileViewController class]]) {
+            ProfileViewController *targetVC = segue.destinationViewController;
+            targetVC.photo = self.photo;
+        }
+    }
 }
-*/
 
 @end

@@ -23,6 +23,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    PFObject *photo = self.photo;
+    PFFile *imageFile = self.photo[kPhotoPictureKey];
+    [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+        if (!error) {
+            UIImage *image = [UIImage imageWithData:data];
+            self.profilePictureImageView.image = image;
+        }
+    }];
+    
+    self.ageLabel.text = photo[kPhotoUserKey][kUserProfileKey][kUserProfileAgeKey];
+    self.locationLabel.text = photo[kPhotoUserKey][kUserProfileKey][kUserProfileLocationKey];
+    self.statusLabel.text = photo[kPhotoUserKey][kUserProfileKey][kUserProfileRelationshipStatusKey];
+    self.taglineLabel.text = photo[kPhotoUserKey][kUserProfileKey][kUserTagLineKey];
 }
 
 - (void)didReceiveMemoryWarning {
