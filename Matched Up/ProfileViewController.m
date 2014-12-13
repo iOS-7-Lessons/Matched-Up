@@ -33,7 +33,7 @@
         }
     }];
     
-    self.ageLabel.text = photo[kPhotoUserKey][kUserProfileKey][kUserProfileAgeKey];
+    self.ageLabel.text = [NSString stringWithFormat:@"%@", photo[kPhotoUserKey][kUserProfileKey][kUserProfileAgeKey]];
     self.locationLabel.text = photo[kPhotoUserKey][kUserProfileKey][kUserProfileLocationKey];
     self.statusLabel.text = photo[kPhotoUserKey][kUserProfileKey][kUserProfileRelationshipStatusKey];
     self.taglineLabel.text = photo[kPhotoUserKey][kUserProfileKey][kUserTagLineKey];
