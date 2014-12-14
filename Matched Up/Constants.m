@@ -31,7 +31,7 @@ NSString *const kPhotoClassKey              = @"Photo";
 NSString *const kPhotoUserKey               = @"user";
 NSString *const kPhotoPictureKey            = @"image";
 
-#pragma - mark Activity
+#pragma mark - Activity
 
 NSString *const kActivityClassKey         = @"Activity";
 NSString *const kActivityTypeKey          = @"type";
@@ -40,5 +40,12 @@ NSString *const kActivityToUserKey        = @"toUser";
 NSString *const kActivityPhotoKey         = @"photo";
 NSString *const kActivityTypeLikeKey      = @"like";
 NSString *const kActivityTypeDislikeKey   = @"dislike";
+
+#pragma mark - Settings
+
+NSString *const kMenEnabledKey            = @"men";
+NSString *const kWomenEnabledKey          = @"women";
+NSString *const kSingleEnabledKey         = @"single";
+NSString *const kMaxAgeKey                = @"ageMax";
 
 @end

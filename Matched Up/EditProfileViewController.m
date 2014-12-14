@@ -21,6 +21,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    PFQuery *query = [PFQuery queryWithClassName:kPhotoClassKey];
+    [query whereKey:kPhotoUserKey equalTo:[PFUser currentUser]];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if ([objects count] > 0) {
+            PFObject *object = objects[0];
+            PFFile *imageFile = object[kPhotoPictureKey];
+            [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+                if (!error) {
+                    self.profilePictureImageView.image = [UIImage imageWithData:data];
+                }
+            }];
+        }
+    }];
+    
+    self.tagLineTextView.text = [[PFUser currentUser] objectForKey:kUserTagLineKey];
 }
 
 - (void)didReceiveMemoryWarning {
