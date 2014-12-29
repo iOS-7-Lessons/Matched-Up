@@ -119,7 +119,7 @@
 - (id<JSMessageData>)messageForRowAtIndexPath:(NSIndexPath *)indexPath {
     PFObject *chat = self.chats[indexPath.row];
     JSMessage *message = [[JSMessage alloc] init];
-    message.sender = chat[@"text"];
+    message.text = chat[@"text"];
     return message;
 }
 
