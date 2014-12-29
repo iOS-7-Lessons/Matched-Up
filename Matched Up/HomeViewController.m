@@ -9,8 +9,9 @@
 #import "HomeViewController.h"
 #import "ProfileViewController.h"
 #import "TestUser.h"
+#import "MatchViewController.h"
 
-@interface HomeViewController ()
+@interface HomeViewController () <MatchViewControllerDelegate>
 
 // IBOutlets
 
@@ -69,6 +70,7 @@
 #pragma mark - IBActions
 
 - (IBAction)chatBarButtonItemPressed:(UIBarButtonItem *)sender {
+    [self performSegueWithIdentifier:@"homeToMatchViewControllerSegue" sender:nil];
 }
 - (IBAction)settingsBarButtonItemPressed:(UIBarButtonItem *)sender {
 }
@@ -160,6 +162,7 @@
             self.isLikedByCurrentUser = YES;
             self.isDislikedByCurrentUser = NO;
             [self.activities addObject:likeActivity];
+            [self checkForPhotoUserLikes];
             [self setupNextPhoto];
         } else {
             NSLog(@"%@", error);
@@ -213,6 +216,49 @@
     else [self saveDislike];
 }
 
+- (void)checkForPhotoUserLikes {
+    PFQuery *query = [PFQuery queryWithClassName:kActivityClassKey];
+    [query whereKey:kActivityFromUserKey equalTo:self.photo[kPhotoUserKey]];
+    [query whereKey:kActivityToUserKey equalTo:[PFUser currentUser]];
+    [query whereKey:kActivityTypeKey equalTo:kActivityTypeLikeKey];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if ([objects count] > 0) {
+            // creating the chatroom
+            [self createChatRoom];
+        }
+    }];
+}
+
+- (void)createChatRoom {
+    PFQuery *queryForChatRoom = [PFQuery queryWithClassName:@"ChatRoom"];
+    [queryForChatRoom whereKey:@"user1" equalTo:[PFUser currentUser]];
+    [queryForChatRoom whereKey:@"user2" equalTo:self.photo[kPhotoUserKey]];
+    
+    PFQuery *queryForChatRoomInverse = [PFQuery queryWithClassName:@"ChatRoom"];
+    [queryForChatRoomInverse whereKey:@"user1" equalTo:self.photo[kPhotoUserKey]];
+    [queryForChatRoomInverse whereKey:@"user2" equalTo:[PFUser currentUser]];
+    
+    PFQuery *combinedQuery = [PFQuery orQueryWithSubqueries:@[queryForChatRoom, queryForChatRoomInverse]];
+    [combinedQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if ([objects count] == 0) {
+            PFObject *chatRoom = [PFObject objectWithClassName:@"ChatRoom"];
+            [chatRoom setObject:[PFUser currentUser] forKey:@"user1"];
+            [chatRoom setObject:self.photo[kPhotoUserKey] forKey:@"user2"];
+            [chatRoom saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                if (!error) [self performSegueWithIdentifier:@"homeToMatchViewControllerSegue" sender:nil];
+            }];
+        }
+    }];
+}
+
+#pragma mark - MathcesViewControllerDelegate
+
+- (void)presentMathcesViewController {
+    [self dismissViewControllerAnimated:YES completion:^{
+        [self performSegueWithIdentifier:@"homeToMatchesViewControllerSegue" sender:nil];
+    }];
+}
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -223,6 +269,13 @@
         if ([segue.destinationViewController isKindOfClass:[ProfileViewController class]]) {
             ProfileViewController *targetVC = segue.destinationViewController;
             targetVC.photo = self.photo;
+        }
+    }
+    else if ([segue.identifier isEqualToString:@"homeToMatchViewControllerSegue"]) {
+        if ([segue.destinationViewController isKindOfClass:[MatchViewController class]]) {
+            MatchViewController *targetVC = segue.destinationViewController;
+            targetVC.matchedUserImage = self.photoImageView.image;
+            targetVC.delegate = self;
         }
     }
 }

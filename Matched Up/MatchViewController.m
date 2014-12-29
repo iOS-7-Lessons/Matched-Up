@@ -1,41 +1,38 @@
 //
-//  EditProfileViewController.m
+//  MatchViewController.m
 //  Matched Up
 //
-//  Created by Eray on 06/12/14.
+//  Created by Eray on 14/12/14.
 //  Copyright (c) 2014 Eray Diler. All rights reserved.
 //
 
-#import "EditProfileViewController.h"
+#import "MatchViewController.h"
 
-@interface EditProfileViewController ()
+@interface MatchViewController ()
 
-@property (weak, nonatomic) IBOutlet UITextView *tagLineTextView;
-@property (weak, nonatomic) IBOutlet UIImageView *profilePictureImageView;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *saveBarButtonItem;
+@property (weak, nonatomic) IBOutlet UIImageView *matchedUserImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *currentUserImageView;
 
 @end
 
-@implementation EditProfileViewController
+@implementation MatchViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
     PFQuery *query = [PFQuery queryWithClassName:kPhotoClassKey];
     [query whereKey:kPhotoUserKey equalTo:[PFUser currentUser]];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if ([objects count] > 0) {
-            PFObject *object = objects[0];
-            PFFile *imageFile = object[kPhotoPictureKey];
+            PFObject *photo = objects[0];
+            PFFile *imageFile = photo[kPhotoPictureKey];
             [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-                if (!error) {
-                    self.profilePictureImageView.image = [UIImage imageWithData:data];
-                }
+                self.currentUserImageView.image = [UIImage imageWithData:data];
+                self.matchedUserImageView.image = self.matchedUserImage;
             }];
         }
     }];
-    
-    self.tagLineTextView.text = [[PFUser currentUser] objectForKey:kUserTagLineKey];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,10 +42,11 @@
 
 #pragma mark - IBActions
 
-- (IBAction)saveBarButtonPressed:(UIBarButtonItem *)sender {
-    [[PFUser currentUser] setObject:self.tagLineTextView.text forKey:kUserTagLineKey];
-    [[PFUser currentUser] saveInBackground];
-    [self.navigationController popViewControllerAnimated:YES];
+- (IBAction)viewChatsButtonPressed:(UIButton *)sender {
+    [self.delegate presentMathcesViewController];
+}
+- (IBAction)keepSearchingButtonPressed:(UIButton *)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 /*
