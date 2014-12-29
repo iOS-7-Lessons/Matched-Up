@@ -20,6 +20,11 @@
     [Parse setApplicationId:@"kgAzcw9YnMs3QIXmDhUjwO02X5f6UqADksuoSK4Z"
                    clientKey:@"13UW4bcXbRt6d2Rq64OqTv5JNna4ahk8kA2GWRce"];
     [PFFacebookUtils initializeFacebook];
+    
+    // Set default settings from .plist and save into nsuserdefaults
+    NSString *defaultPrefsFile = [[NSBundle mainBundle] pathForResource:@"defaultPrefsFile" ofType:@"plist"];
+    NSDictionary *defaultPreferences = [NSDictionary dictionaryWithContentsOfFile:defaultPrefsFile];
+    [[NSUserDefaults standardUserDefaults] registerDefaults:defaultPreferences];
     return YES;
 }
 

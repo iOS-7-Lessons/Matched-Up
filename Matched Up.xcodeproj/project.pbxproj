@@ -15,6 +15,7 @@
 		2A82AA071A3DEF0C0059E956 /* MatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A82AA061A3DEF0C0059E956 /* MatchViewController.m */; };
 		2A82AA0B1A3DFA2B0059E956 /* MatchesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A82AA0A1A3DFA2B0059E956 /* MatchesViewController.m */; };
 		2A9DC4631A2E0B6400C39E7A /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9DC4621A2E0B6400C39E7A /* Constants.m */; };
+		2AE2BE2D1A51F07F009E5723 /* defaultPrefsFile.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2AE2BE2C1A51F07F009E5723 /* defaultPrefsFile.plist */; };
 		2AF07DF21A31F2C900544B5B /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF07DF11A31F2C900544B5B /* HomeViewController.m */; };
 		2AF8E2E11A35B7C700ACA482 /* TestUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF8E2E01A35B7C700ACA482 /* TestUser.m */; };
 		2AF8E2E31A35C0BD00ACA482 /* user1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2AF8E2E21A35C0BD00ACA482 /* user1.jpg */; };
@@ -55,6 +56,7 @@
 		2A82AA0A1A3DFA2B0059E956 /* MatchesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchesViewController.m; sourceTree = "<group>"; };
 		2A9DC4611A2E0B6400C39E7A /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		2A9DC4621A2E0B6400C39E7A /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		2AE2BE2C1A51F07F009E5723 /* defaultPrefsFile.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = defaultPrefsFile.plist; sourceTree = "<group>"; };
 		2AF07DF01A31F2C900544B5B /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		2AF07DF11A31F2C900544B5B /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		2AF8E2DF1A35B7C700ACA482 /* TestUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestUser.h; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 			children = (
 				2A0B3EDD1A331BAB004E36DA /* SettingsViewController.h */,
 				2A0B3EDE1A331BAB004E36DA /* SettingsViewController.m */,
+				2AE2BE2C1A51F07F009E5723 /* defaultPrefsFile.plist */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 				FA9E54DF1A2A159A00EA3646 /* Main.storyboard in Resources */,
 				FA9E54E41A2A159A00EA3646 /* LaunchScreen.xib in Resources */,
 				FA9E54E11A2A159A00EA3646 /* Images.xcassets in Resources */,
+				2AE2BE2D1A51F07F009E5723 /* defaultPrefsFile.plist in Resources */,
 				2AF8E2E31A35C0BD00ACA482 /* user1.jpg in Resources */,
 				2A580D0A1A33774500AB2E74 /* user.png in Resources */,
 			);
