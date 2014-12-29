@@ -70,7 +70,7 @@
 #pragma mark - IBActions
 
 - (IBAction)chatBarButtonItemPressed:(UIBarButtonItem *)sender {
-    [self performSegueWithIdentifier:@"homeToMatchViewControllerSegue" sender:nil];
+    [self performSegueWithIdentifier:@"homeToMatchesViewControllerSegue" sender:nil];
 }
 - (IBAction)settingsBarButtonItemPressed:(UIBarButtonItem *)sender {
 }
