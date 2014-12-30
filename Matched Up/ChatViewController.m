@@ -139,7 +139,7 @@
 #pragma mark - Helper Methods
 
 - (void)checkForNewChats {
-    int oldChatsCount = [self.chats count];
+    int oldChatsCount = (int)[self.chats count];
     
     PFQuery *queryForChats = [PFQuery queryWithClassName:kChatClassKey];
     [queryForChats whereKey:kChatChatroomKey equalTo:self.chatRoom];

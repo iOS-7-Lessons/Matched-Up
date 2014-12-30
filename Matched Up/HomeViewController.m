@@ -166,7 +166,7 @@
 }
 
 - (BOOL)allowPhoto {
-    int maxAge = [[NSUserDefaults standardUserDefaults] integerForKey:kMaxAgeKey];
+    int maxAge = (int)[[NSUserDefaults standardUserDefaults] integerForKey:kMaxAgeKey];
     BOOL men = [[NSUserDefaults standardUserDefaults] boolForKey:kMenEnabledKey];
     BOOL women = [[NSUserDefaults standardUserDefaults] boolForKey:kWomenEnabledKey];
     BOOL single = [[NSUserDefaults standardUserDefaults] boolForKey:kSingleEnabledKey];
@@ -174,7 +174,7 @@
     PFObject *photo = self.photos[self.currentPhotoIndex];
     PFUser *user = photo[kPhotoUserKey];
     
-    int userAge = [user[kUserProfileKey][kUserProfileAgeKey] integerValue];
+    int userAge = (int)[user[kUserProfileKey][kUserProfileAgeKey] integerValue];
     NSString *gender = user[kUserProfileKey][kUserProfileGenderKey];
     NSString *relationshipStatus = user[kUserProfileKey][kUserProfileRelationshipStatusKey];
     

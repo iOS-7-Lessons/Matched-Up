@@ -12,6 +12,7 @@
 		2A0B3EE41A3326DF004E36DA /* EditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A0B3EE31A3326DF004E36DA /* EditProfileViewController.m */; };
 		2A580D081A33766800AB2E74 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A580D071A33766800AB2E74 /* ProfileViewController.m */; };
 		2A580D0A1A33774500AB2E74 /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A580D091A33774500AB2E74 /* user.png */; };
+		2A6CA1A41A52E72F00364F1B /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A6CA1A31A52E72F00364F1B /* Icon-60@2x.png */; };
 		2A82AA071A3DEF0C0059E956 /* MatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A82AA061A3DEF0C0059E956 /* MatchViewController.m */; };
 		2A82AA0B1A3DFA2B0059E956 /* MatchesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A82AA0A1A3DFA2B0059E956 /* MatchesViewController.m */; };
 		2A9DC4631A2E0B6400C39E7A /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9DC4621A2E0B6400C39E7A /* Constants.m */; };
@@ -50,6 +51,7 @@
 		2A580D061A33766800AB2E74 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		2A580D071A33766800AB2E74 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		2A580D091A33774500AB2E74 /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
+		2A6CA1A31A52E72F00364F1B /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@2x.png"; sourceTree = "<group>"; };
 		2A82AA051A3DEF0C0059E956 /* MatchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchViewController.h; sourceTree = "<group>"; };
 		2A82AA061A3DEF0C0059E956 /* MatchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchViewController.m; sourceTree = "<group>"; };
 		2A82AA091A3DFA2B0059E956 /* MatchesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchesViewController.h; sourceTree = "<group>"; };
@@ -134,6 +136,14 @@
 				2A580D071A33766800AB2E74 /* ProfileViewController.m */,
 			);
 			name = Profile;
+			sourceTree = "<group>";
+		};
+		2A6CA1681A52DD5400364F1B /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				2A6CA1A31A52E72F00364F1B /* Icon-60@2x.png */,
+			);
+			name = Assets;
 			sourceTree = "<group>";
 		};
 		2A82AA041A3DEEE40059E956 /* Match */ = {
@@ -226,6 +236,7 @@
 		FA9E54D01A2A159A00EA3646 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2A6CA1681A52DD5400364F1B /* Assets */,
 				2AF8E2E21A35C0BD00ACA482 /* user1.jpg */,
 				2A580D091A33774500AB2E74 /* user.png */,
 				FA9E54FF1A2A444E00EA3646 /* Matched Up-PrefixHeader.pch */,
@@ -385,6 +396,7 @@
 				FA9E54DF1A2A159A00EA3646 /* Main.storyboard in Resources */,
 				FA9E54E41A2A159A00EA3646 /* LaunchScreen.xib in Resources */,
 				FA9E54E11A2A159A00EA3646 /* Images.xcassets in Resources */,
+				2A6CA1A41A52E72F00364F1B /* Icon-60@2x.png in Resources */,
 				2AE2BE2D1A51F07F009E5723 /* defaultPrefsFile.plist in Resources */,
 				2AF8E2E31A35C0BD00ACA482 /* user1.jpg in Resources */,
 				2A580D0A1A33774500AB2E74 /* user.png in Resources */,
