@@ -10,6 +10,10 @@
 		2A0A50CD1A3EEEF900D7750C /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A0A50CC1A3EEEF900D7750C /* ChatViewController.m */; };
 		2A0B3EDF1A331BAB004E36DA /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A0B3EDE1A331BAB004E36DA /* SettingsViewController.m */; };
 		2A0B3EE41A3326DF004E36DA /* EditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A0B3EE31A3326DF004E36DA /* EditProfileViewController.m */; };
+		2A44CC621A534BA900157BCC /* Facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A44CC5E1A534BA900157BCC /* Facebook.png */; };
+		2A44CC631A534BA900157BCC /* Facebook@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A44CC5F1A534BA900157BCC /* Facebook@2x.png */; };
+		2A44CC641A534BA900157BCC /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A44CC601A534BA900157BCC /* Logo.png */; };
+		2A44CC651A534BA900157BCC /* Logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A44CC611A534BA900157BCC /* Logo@2x.png */; };
 		2A580D081A33766800AB2E74 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A580D071A33766800AB2E74 /* ProfileViewController.m */; };
 		2A580D0A1A33774500AB2E74 /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A580D091A33774500AB2E74 /* user.png */; };
 		2A6CA1A41A52E72F00364F1B /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A6CA1A31A52E72F00364F1B /* Icon-60@2x.png */; };
@@ -48,6 +52,10 @@
 		2A0B3EDE1A331BAB004E36DA /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		2A0B3EE21A3326DF004E36DA /* EditProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditProfileViewController.h; sourceTree = "<group>"; };
 		2A0B3EE31A3326DF004E36DA /* EditProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditProfileViewController.m; sourceTree = "<group>"; };
+		2A44CC5E1A534BA900157BCC /* Facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Facebook.png; sourceTree = "<group>"; };
+		2A44CC5F1A534BA900157BCC /* Facebook@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Facebook@2x.png"; sourceTree = "<group>"; };
+		2A44CC601A534BA900157BCC /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
+		2A44CC611A534BA900157BCC /* Logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Logo@2x.png"; sourceTree = "<group>"; };
 		2A580D061A33766800AB2E74 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		2A580D071A33766800AB2E74 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		2A580D091A33774500AB2E74 /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
@@ -120,6 +128,17 @@
 			name = EditProfile;
 			sourceTree = "<group>";
 		};
+		2A44CC5D1A534BA900157BCC /* 01_LoginScreen */ = {
+			isa = PBXGroup;
+			children = (
+				2A44CC5E1A534BA900157BCC /* Facebook.png */,
+				2A44CC5F1A534BA900157BCC /* Facebook@2x.png */,
+				2A44CC601A534BA900157BCC /* Logo.png */,
+				2A44CC611A534BA900157BCC /* Logo@2x.png */,
+			);
+			path = 01_LoginScreen;
+			sourceTree = "<group>";
+		};
 		2A52485C1A3E3EBF00634802 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +160,7 @@
 		2A6CA1681A52DD5400364F1B /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				2A44CC5D1A534BA900157BCC /* 01_LoginScreen */,
 				2A6CA1A31A52E72F00364F1B /* Icon-60@2x.png */,
 			);
 			name = Assets;
@@ -394,6 +414,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA9E54DF1A2A159A00EA3646 /* Main.storyboard in Resources */,
+				2A44CC651A534BA900157BCC /* Logo@2x.png in Resources */,
+				2A44CC631A534BA900157BCC /* Facebook@2x.png in Resources */,
+				2A44CC641A534BA900157BCC /* Logo.png in Resources */,
+				2A44CC621A534BA900157BCC /* Facebook.png in Resources */,
 				FA9E54E41A2A159A00EA3646 /* LaunchScreen.xib in Resources */,
 				FA9E54E11A2A159A00EA3646 /* Images.xcassets in Resources */,
 				2A6CA1A41A52E72F00364F1B /* Icon-60@2x.png in Resources */,
