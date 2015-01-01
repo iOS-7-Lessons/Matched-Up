@@ -60,6 +60,10 @@
 		2AAD66231A55999100C26643 /* Chat_user@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AAD66171A55999100C26643 /* Chat_user@2x.png */; };
 		2AAD66241A55999100C26643 /* menu-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AAD66181A55999100C26643 /* menu-icon.png */; };
 		2AAD66251A55999100C26643 /* menu-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AAD66191A55999100C26643 /* menu-icon@2x.png */; };
+		2AAD663D1A559F0E00C26643 /* EditProfile.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AAD662F1A559F0E00C26643 /* EditProfile.png */; };
+		2AAD663E1A559F0E00C26643 /* EditProfile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AAD66301A559F0E00C26643 /* EditProfile@2x.png */; };
+		2AAD663F1A559F0E00C26643 /* Logout.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AAD66311A559F0E00C26643 /* Logout.png */; };
+		2AAD66401A559F0E00C26643 /* Logout@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AAD66321A559F0E00C26643 /* Logout@2x.png */; };
 		2AE2BE2D1A51F07F009E5723 /* defaultPrefsFile.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2AE2BE2C1A51F07F009E5723 /* defaultPrefsFile.plist */; };
 		2AF07DF21A31F2C900544B5B /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF07DF11A31F2C900544B5B /* HomeViewController.m */; };
 		2AF8E2E11A35B7C700ACA482 /* TestUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF8E2E01A35B7C700ACA482 /* TestUser.m */; };
@@ -146,6 +150,10 @@
 		2AAD66171A55999100C26643 /* Chat_user@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Chat_user@2x.png"; sourceTree = "<group>"; };
 		2AAD66181A55999100C26643 /* menu-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-icon.png"; sourceTree = "<group>"; };
 		2AAD66191A55999100C26643 /* menu-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-icon@2x.png"; sourceTree = "<group>"; };
+		2AAD662F1A559F0E00C26643 /* EditProfile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EditProfile.png; sourceTree = "<group>"; };
+		2AAD66301A559F0E00C26643 /* EditProfile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "EditProfile@2x.png"; sourceTree = "<group>"; };
+		2AAD66311A559F0E00C26643 /* Logout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logout.png; sourceTree = "<group>"; };
+		2AAD66321A559F0E00C26643 /* Logout@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Logout@2x.png"; sourceTree = "<group>"; };
 		2AE2BE2C1A51F07F009E5723 /* defaultPrefsFile.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = defaultPrefsFile.plist; sourceTree = "<group>"; };
 		2AF07DF01A31F2C900544B5B /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		2AF07DF11A31F2C900544B5B /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
@@ -267,6 +275,7 @@
 		2A6CA1681A52DD5400364F1B /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				2AAD662A1A559F0E00C26643 /* 06_Settings */,
 				2AAD66111A55999100C26643 /* 04_ChatList */,
 				2A93F0E31A54110000632382 /* 03_Profile */,
 				2A44CC661A534FB800157BCC /* 02_HomeScreen */,
@@ -326,6 +335,17 @@
 				2AAD66191A55999100C26643 /* menu-icon@2x.png */,
 			);
 			path = 04_ChatList;
+			sourceTree = "<group>";
+		};
+		2AAD662A1A559F0E00C26643 /* 06_Settings */ = {
+			isa = PBXGroup;
+			children = (
+				2AAD662F1A559F0E00C26643 /* EditProfile.png */,
+				2AAD66301A559F0E00C26643 /* EditProfile@2x.png */,
+				2AAD66311A559F0E00C26643 /* Logout.png */,
+				2AAD66321A559F0E00C26643 /* Logout@2x.png */,
+			);
+			path = 06_Settings;
 			sourceTree = "<group>";
 		};
 		2AF07DF31A31F2F300544B5B /* Login */ = {
@@ -569,15 +589,18 @@
 				2A93F1031A54110000632382 /* AgeIcon@2x.png in Resources */,
 				2A44CC8D1A534FB800157BCC /* VP_BG.png in Resources */,
 				2A44CC651A534BA900157BCC /* Logo@2x.png in Resources */,
+				2AAD663E1A559F0E00C26643 /* EditProfile@2x.png in Resources */,
 				2AAD66221A55999100C26643 /* Chat_user.png in Resources */,
 				2A44CC7B1A534FB800157BCC /* BG.png in Resources */,
 				2A44CC831A534FB800157BCC /* LikeIcon.png in Resources */,
 				2A44CC821A534FB800157BCC /* InfoIcon@2x.png in Resources */,
 				2AAD661E1A55999100C26643 /* back-icon.png in Resources */,
 				2A44CC631A534BA900157BCC /* Facebook@2x.png in Resources */,
+				2AAD663F1A559F0E00C26643 /* Logout.png in Resources */,
 				2A44CC641A534BA900157BCC /* Logo.png in Resources */,
 				2AAD661F1A55999100C26643 /* back-icon@2x.png in Resources */,
 				2A44CC8C1A534FB800157BCC /* User_Image@2x.png in Resources */,
+				2AAD66401A559F0E00C26643 /* Logout@2x.png in Resources */,
 				2A44CC621A534BA900157BCC /* Facebook.png in Resources */,
 				2A93F1171A54110000632382 /* StatusIcon@2x.png in Resources */,
 				2A93F1191A54110000632382 /* UserImage@2x.png in Resources */,
@@ -602,6 +625,7 @@
 				2AAD66241A55999100C26643 /* menu-icon.png in Resources */,
 				2A44CC861A534FB800157BCC /* Matched-Up@2x.png in Resources */,
 				2A93F1111A54110000632382 /* NameAgeStatusBar@2x.png in Resources */,
+				2AAD663D1A559F0E00C26643 /* EditProfile.png in Resources */,
 				2A93F1021A54110000632382 /* AgeIcon.png in Resources */,
 				2A44CC881A534FB800157BCC /* SettingIcon@2x.png in Resources */,
 				2A44CC8E1A534FB800157BCC /* VP_BG@2x.png in Resources */,

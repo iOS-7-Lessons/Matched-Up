@@ -36,6 +36,8 @@
     
 //    self.ageLabel.text = [NSString stringWithFormat:@"19"];
     self.ageLabel.text = [NSString stringWithFormat:@"%i", (int)self.ageSlider.value];
+    
+    self.title = @"Settings";
 }
 
 - (void)didReceiveMemoryWarning {
