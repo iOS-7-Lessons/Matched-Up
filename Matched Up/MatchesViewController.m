@@ -66,7 +66,6 @@
     }
     cell.textLabel.text = likedUser[@"profile"][@"firstName"];
     
-    cell.imageView.image = [UIImage imageNamed:@"user.png"];    
     cell.imageView.contentMode = UIViewContentModeScaleAspectFit;
     
     PFQuery *queryForUserPhoto = [PFQuery queryWithClassName:kPhotoClassKey];

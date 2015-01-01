@@ -457,7 +457,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Matches Cell" textLabel="sBL-AZ-OSQ" detailTextLabel="EUR-mC-lsp" rowHeight="100" style="IBUITableViewCellStyleSubtitle" id="BwA-lA-WHf">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Matches Cell" textLabel="sBL-AZ-OSQ" detailTextLabel="EUR-mC-lsp" imageView="fd6-nm-SDc" rowHeight="100" style="IBUITableViewCellStyleSubtitle" id="BwA-lA-WHf">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BwA-lA-WHf" id="mrA-DW-eYu">
@@ -481,6 +481,9 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                     </variation>
                                                 </label>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="Chat_user.png" id="fd6-nm-SDc">
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1229,6 +1232,7 @@
     <resources>
         <image name="AgeIcon.png" width="19" height="19"/>
         <image name="ChatIcon.png" width="22" height="22"/>
+        <image name="Chat_user.png" width="58" height="55"/>
         <image name="DislikeIcon.png" width="38" height="37"/>
         <image name="Facebook.png" width="200" height="25"/>
         <image name="InfoIcon.png" width="39" height="37"/>
