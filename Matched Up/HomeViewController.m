@@ -11,7 +11,7 @@
 #import "TestUser.h"
 #import "MatchViewController.h"
 
-@interface HomeViewController () <MatchViewControllerDelegate>
+@interface HomeViewController () <MatchViewControllerDelegate, ProfileViewControllerDelegate>
 
 // IBOutlets
 
@@ -311,6 +311,18 @@
     }];
 }
 
+#pragma mark - ProfileViewController Delegate
+
+- (void)didLikePressed {
+    [self.navigationController popViewControllerAnimated:NO];
+    [self checkLike];
+}
+
+- (void)didDislikePressed {
+    [self.navigationController popViewControllerAnimated:NO];
+    [self checkDislike];
+}
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -321,6 +333,7 @@
         if ([segue.destinationViewController isKindOfClass:[ProfileViewController class]]) {
             ProfileViewController *targetVC = segue.destinationViewController;
             targetVC.photo = self.photo;
+            targetVC.delegate = self;
         }
     }
     else if ([segue.identifier isEqualToString:@"homeToMatchViewControllerSegue"]) {

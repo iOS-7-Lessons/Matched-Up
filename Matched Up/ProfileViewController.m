@@ -24,7 +24,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    PFObject *photo = self.photo;
     PFFile *imageFile = self.photo[kPhotoPictureKey];
     [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
         if (!error) {
@@ -33,10 +32,18 @@
         }
     }];
     
-    self.ageLabel.text = [NSString stringWithFormat:@"%@", photo[kPhotoUserKey][kUserProfileKey][kUserProfileAgeKey]];
-    self.locationLabel.text = photo[kPhotoUserKey][kUserProfileKey][kUserProfileLocationKey];
-    self.statusLabel.text = photo[kPhotoUserKey][kUserProfileKey][kUserProfileRelationshipStatusKey];
-    self.taglineLabel.text = photo[kPhotoUserKey][kUserProfileKey][kUserTagLineKey];
+    PFUser *user = self.photo[kPhotoUserKey];
+    self.ageLabel.text = [NSString stringWithFormat:@"%@", user[kUserProfileKey][kUserProfileAgeKey]];
+    self.locationLabel.text = user[kUserProfileKey][kUserProfileLocationKey];
+    
+    if (user[kUserProfileKey][kUserProfileRelationshipStatusKey] == nil)
+        self.statusLabel.text = @"Single";
+     else self.statusLabel.text = user[kUserProfileKey][kUserProfileRelationshipStatusKey];
+        
+    self.taglineLabel.text = user[kUserTagLineKey];
+    
+    self.title = user[kUserProfileKey][kUserProfileFirstNameKey];
+    self.view.backgroundColor = [UIColor colorWithRed:242/255.0 green:242/255.0 blue:242/255.0 alpha:1.0];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,9 +54,11 @@
 #pragma mark - IBActions
 
 - (IBAction)likeButtonPressed:(UIButton *)sender {
+    [self.delegate didLikePressed];
 }
 
 - (IBAction)dislikeButtonPressed:(UIButton *)sender {
+    [self.delegate didDislikePressed];
 }
 
 /*
