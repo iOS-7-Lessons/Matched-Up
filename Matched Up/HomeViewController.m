@@ -11,7 +11,7 @@
 #import "TestUser.h"
 #import "MatchViewController.h"
 
-@interface HomeViewController () <MatchViewControllerDelegate, ProfileViewControllerDelegate>
+@interface HomeViewController () <MatchViewControllerDelegate, ProfileViewControllerDelegate, UIViewControllerTransitioningDelegate>
 
 // IBOutlets
 
@@ -113,7 +113,6 @@
 #pragma mark - Helper Methods
 
 - (void)queryForCurrentPhotoIndex {
-    //NSLog(@"Photos Data %@", self.photos); // TEST
     if ([self.photos count] > 0) {
         self.photo = self.photos[self.currentPhotoIndex];
         PFFile *file = self.photo[kPhotoPictureKey];
@@ -297,7 +296,15 @@
             [chatRoom setObject:[PFUser currentUser] forKey:kChatRoomUser1Key];
             [chatRoom setObject:self.photo[kPhotoUserKey] forKey:kChatRoomUser2Key];
             [chatRoom saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-                if (!error) [self performSegueWithIdentifier:@"homeToMatchViewControllerSegue" sender:nil];
+//                if (!error) [self performSegueWithIdentifier:@"homeToMatchViewControllerSegue" sender:nil];
+                UIStoryboard *storyboard = self.storyboard;
+                MatchViewController *matchVC = [storyboard instantiateViewControllerWithIdentifier:@"matchVC"];
+                matchVC.view.backgroundColor = [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:.75];
+                matchVC.transitioningDelegate = self;
+                matchVC.delegate = self;
+                matchVC.matchedUserImage = self.photoImageView.image;
+                matchVC.modalPresentationStyle = UIModalPresentationCustom;
+                [self presentViewController:matchVC animated:YES completion:nil];
             }];
         }
     }];
@@ -336,13 +343,13 @@
             targetVC.delegate = self;
         }
     }
-    else if ([segue.identifier isEqualToString:@"homeToMatchViewControllerSegue"]) {
-        if ([segue.destinationViewController isKindOfClass:[MatchViewController class]]) {
-            MatchViewController *targetVC = segue.destinationViewController;
-            targetVC.matchedUserImage = self.photoImageView.image;
-            targetVC.delegate = self;
-        }
-    }
+//    else if ([segue.identifier isEqualToString:@"homeToMatchViewControllerSegue"]) {
+//        if ([segue.destinationViewController isKindOfClass:[MatchViewController class]]) {
+//            MatchViewController *targetVC = segue.destinationViewController;
+//            targetVC.matchedUserImage = self.photoImageView.image;
+//            targetVC.delegate = self;
+//        }
+//    }
 }
 
 @end
