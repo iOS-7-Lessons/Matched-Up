@@ -19,10 +19,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="wgV-5u-PKn">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="wgV-5u-PKn">
                                 <rect key="frame" x="290" y="125" width="20" height="20"/>
                             </activityIndicatorView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jan-ze-rgf">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jan-ze-rgf">
                                 <rect key="frame" x="165" y="550" width="270" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="iBV-5E-aaI"/>
@@ -309,7 +309,7 @@
                         <outlet property="photoImageView" destination="sT6-cW-V6r" id="VBy-Y8-wm6"/>
                         <outlet property="settingsBarButtonItem" destination="w7n-HM-mvT" id="5lk-9E-dPv"/>
                         <segue destination="PkM-69-N0v" kind="show" identifier="toProfileViewControllerSegue" id="fcn-OZ-KPs"/>
-                        <segue destination="a9N-jU-TxV" kind="presentation" identifier="homeToMatchViewControllerSegue" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="q8c-PV-gAd"/>
+                        <segue destination="a9N-jU-TxV" kind="modal" identifier="homeToMatchViewControllerSegue" id="q8c-PV-gAd"/>
                         <segue destination="iqy-wM-3UH" kind="show" identifier="homeToMatchesViewControllerSegue" id="oLu-Qm-Gki"/>
                     </connections>
                 </viewController>
@@ -329,10 +329,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9rC-yz-UBJ">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9rC-yz-UBJ">
                                 <rect key="frame" x="42" y="99" width="348" height="250"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yMh-h1-Nji">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yMh-h1-Nji">
                                         <rect key="frame" x="297" y="20" width="31" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="31" id="WZg-3n-ey5"/>
@@ -354,7 +354,7 @@
                                             <action selector="keepSearchingButtonPressed:" destination="a9N-jU-TxV" eventType="touchUpInside" id="Eca-gq-6eN"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="UserImage.png" translatesAutoresizingMaskIntoConstraints="NO" id="3pc-vO-jld">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="UserImage.png" translatesAutoresizingMaskIntoConstraints="NO" id="3pc-vO-jld">
                                         <rect key="frame" x="20" y="53" width="120" height="121"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="110" id="GMa-IW-9gH"/>
@@ -370,13 +370,13 @@
                                             </mask>
                                         </variation>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="It's a Match !" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gea-gE-h5S">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="It's a Match !" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gea-gE-h5S">
                                         <rect key="frame" x="88" y="200" width="141" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="UserImage.png" translatesAutoresizingMaskIntoConstraints="NO" id="tE2-Ei-Thw">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="UserImage.png" translatesAutoresizingMaskIntoConstraints="NO" id="tE2-Ei-Thw">
                                         <rect key="frame" x="179" y="54" width="120" height="120"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="110" id="dGS-UQ-vQX"/>
@@ -392,7 +392,7 @@
                                             </mask>
                                         </variation>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dFm-rf-kVk">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dFm-rf-kVk">
                                         <rect key="frame" x="280" y="204" width="36" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="36" id="Z9o-am-KVL"/>

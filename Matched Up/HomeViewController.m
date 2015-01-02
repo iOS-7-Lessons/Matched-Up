@@ -10,6 +10,7 @@
 #import "ProfileViewController.h"
 #import "TestUser.h"
 #import "MatchViewController.h"
+#import "TransitionAnimator.h"
 
 @interface HomeViewController () <MatchViewControllerDelegate, ProfileViewControllerDelegate, UIViewControllerTransitioningDelegate>
 
@@ -34,6 +35,8 @@
 
 @property (weak, nonatomic) IBOutlet UIView *labelContainerView;
 @property (weak, nonatomic) IBOutlet UIView *buttonContainerView;
+
+@property (strong, nonatomic) UIViewController *rootViewController;
  
 @end
 
@@ -296,15 +299,16 @@
             [chatRoom setObject:[PFUser currentUser] forKey:kChatRoomUser1Key];
             [chatRoom setObject:self.photo[kPhotoUserKey] forKey:kChatRoomUser2Key];
             [chatRoom saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-//                if (!error) [self performSegueWithIdentifier:@"homeToMatchViewControllerSegue" sender:nil];
-                UIStoryboard *storyboard = self.storyboard;
-                MatchViewController *matchVC = [storyboard instantiateViewControllerWithIdentifier:@"matchVC"];
-                matchVC.view.backgroundColor = [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:.75];
-                matchVC.transitioningDelegate = self;
-                matchVC.delegate = self;
-                matchVC.matchedUserImage = self.photoImageView.image;
-                matchVC.modalPresentationStyle = UIModalPresentationCustom;
-                [self presentViewController:matchVC animated:YES completion:nil];
+                if (!error) {
+                    UIStoryboard *storyboard = self.storyboard;
+                    MatchViewController *matchVC = [storyboard instantiateViewControllerWithIdentifier:@"matchVC"];
+                    matchVC.view.backgroundColor = [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:.75];
+                    matchVC.transitioningDelegate = self;
+                    matchVC.delegate = self;
+                    matchVC.matchedUserImage = self.photoImageView.image;
+                    matchVC.modalPresentationStyle = UIModalPresentationCustom;
+                    [self presentViewController:matchVC animated:YES completion:nil];
+                }
             }];
         }
     }];
@@ -343,13 +347,21 @@
             targetVC.delegate = self;
         }
     }
-//    else if ([segue.identifier isEqualToString:@"homeToMatchViewControllerSegue"]) {
-//        if ([segue.destinationViewController isKindOfClass:[MatchViewController class]]) {
-//            MatchViewController *targetVC = segue.destinationViewController;
-//            targetVC.matchedUserImage = self.photoImageView.image;
-//            targetVC.delegate = self;
-//        }
-//    }
 }
+
+#pragma mark - UIViewControllerTransitioningDelegate
+
+//-(id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source
+//{
+//    TransitionAnimator *animator = [[TransitionAnimator alloc] init];
+//    animator.presenting = YES;
+//    return animator;
+//}
+//
+//-(id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed
+//{
+//    TransitionAnimator *animator = [[TransitionAnimator alloc] init];
+//    return animator;
+//}
 
 @end
